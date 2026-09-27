@@ -31,9 +31,6 @@ Netlify, Cloudflare Pages or S3. Nothing needs to be compiled.
 
 ## Before going live
 
-- **Phone number**: the deck lists `+91 99000 12345`, which looks like a
-  placeholder. It appears in `index.html` in the booking form note and the
-  contact section.
 - **Next cohort date**: the deck had `[date]`. The site says "Ask us when
   the next cohort starts" until a date is set (demo section, step 03).
 - **Booking form**: the form opens the visitor's email app with a pre-filled
