@@ -122,8 +122,30 @@
       el.notes.value ? 'Notes: ' + el.notes.value : ''
     ].join('\n');
     var subject = 'Demo workshop request: ' + el.grade.value;
+    message.value = 'To: info@steam-ie.com\nSubject: ' + subject + '\n\n' + body.trim();
+    copyStatus.textContent = '';
+    sent.hidden = false;
     window.location.href = 'mailto:info@steam-ie.com?subject=' +
       encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+  });
+
+  // Fallback when no email app opens: let the parent copy the request
+  var sent = document.getElementById('book-sent');
+  var message = document.getElementById('book-message');
+  var copyStatus = document.getElementById('copy-status');
+  document.getElementById('copy-message').addEventListener('click', function () {
+    function selectText() {
+      message.focus();
+      message.select();
+      copyStatus.textContent = 'Selected. Press Ctrl+C or ⌘C to copy.';
+    }
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(message.value).then(function () {
+        copyStatus.textContent = 'Copied';
+      }, selectText);
+    } else {
+      selectText();
+    }
   });
 
   document.getElementById('year').textContent = new Date().getFullYear();

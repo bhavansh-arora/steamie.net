@@ -611,27 +611,37 @@
       <form class="book" id="book-form" action="mailto:info@steam-ie.com" method="post" enctype="text/plain">
         <h3 class="h3">Request a demo slot</h3>
         <div class="fields">
-          <label>Parent's name<input name="parent" required autocomplete="name"></label>
-          <label>Phone<input name="phone" type="tel" required autocomplete="tel" inputmode="tel"></label>
-          <label>Email<input name="email" type="email" autocomplete="email"></label>
-          <label>Child's name<input name="child"></label>
+          <label>Parent's name<input id="f-parent" name="parent" required autocomplete="name"></label>
+          <label>Phone<input id="f-phone" name="phone" type="tel" required autocomplete="tel" inputmode="tel"></label>
+          <label>Email<input id="f-email" name="email" type="email" autocomplete="email"></label>
+          <label>Child's name<input id="f-child" name="child"></label>
           <label>Child's grade
-            <select name="grade" required>
+            <select id="f-grade" name="grade" required>
               <option value="">Choose…</option>
               <option>Grade 6</option><option>Grade 7</option><option>Grade 8</option>
               <option>Grade 9</option><option>Grade 10</option><option>Grade 11</option><option>Grade 12</option>
             </select>
           </label>
           <label>Preferred day
-            <select name="day">
+            <select id="f-day" name="day">
               <option>Saturday</option><option>Sunday</option><option>Either</option>
             </select>
           </label>
-          <label class="full"><span>Anything we should know? <span class="opt">(optional)</span></span><textarea name="notes" rows="3"></textarea></label>
+          <label class="full"><span>Anything we should know? <span class="opt">(optional)</span></span><textarea id="f-notes" name="notes" rows="3"></textarea></label>
         </div>
         <p class="form-hint" id="grade-hint" aria-live="polite"></p>
         <button class="btn btn-dark" type="submit">Send request <svg><use href="#i-arrow"/></svg></button>
         <p class="form-note">This opens your email app with the details filled in. Prefer to talk? Call <a href="tel:+919900012345">+91 99000 12345</a>.</p>
+        <div class="sent" id="book-sent" hidden>
+          <p class="sent-title">Your email app should open with this request.</p>
+          <p>If nothing opened, copy the message and send it to <strong>info@steam-ie.com</strong>, or call <strong>+91 99000 12345</strong>.</p>
+          <label class="sr" for="book-message">Your request</label>
+          <textarea id="book-message" readonly rows="9"></textarea>
+          <div class="sent-actions">
+            <button type="button" class="btn btn-sm btn-outline" id="copy-message">Copy message</button>
+            <span id="copy-status" aria-live="polite"></span>
+          </div>
+        </div>
       </form>
     </div>
   </section>

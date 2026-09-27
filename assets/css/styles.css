@@ -110,7 +110,7 @@ button { font: inherit; cursor: pointer; }
 
 /* ---------- header ---------- */
 .site-header {
-  position: sticky; top: 0; z-index: 50;
+  position: sticky; top: env(safe-area-inset-top, 0px); z-index: 50;
   background: rgba(58, 42, 30, .96);
   backdrop-filter: saturate(1.2) blur(8px);
   color: #fff5e8;
@@ -462,6 +462,11 @@ html:not(.js) .tabpanel + .tabpanel { margin-top: 5rem; }
 .form-hint { font-weight: 700; color: var(--navy); min-height: 1.5em; margin-bottom: .6rem; }
 .form-note { font-size: .88rem; color: var(--muted); margin-top: 1rem; }
 .form-note a { color: var(--terracotta); font-weight: 800; }
+.sent { margin-top: 1.4rem; padding: 1.2rem 1.3rem; border-radius: var(--radius); background: var(--cream-2); display: grid; gap: .7rem; }
+.sent-title { font-weight: 800; color: var(--olive); }
+.sent textarea { font: 400 .92rem/1.5 var(--body); color: var(--ink); background: #fff; border: 1.5px solid rgba(58, 42, 30, .2); border-radius: 8px; padding: .7rem .8rem; width: 100%; resize: vertical; }
+.sent-actions { display: flex; align-items: center; gap: .8rem; flex-wrap: wrap; }
+#copy-status { font-weight: 700; color: var(--olive); font-size: .9rem; }
 
 /* contact */
 .contact { position: relative; overflow: hidden; }
