@@ -468,8 +468,7 @@ html:not(.js) .tabpanel + .tabpanel { margin-top: 5rem; }
 .contact-media::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, var(--brown) 0%, rgba(58, 42, 30, .5) 25%, rgba(58, 42, 30, 0) 55%); }
 .contact-inner { position: relative; }
 .contact-inner > * { max-width: 34rem; }
-.contact .lede { color: rgba(255, 245, 232, .82); }
-.contact-list { display: grid; gap: .8rem; margin-top: 2rem; font-size: 1.1rem; font-weight: 700; }
+.contact-list { display: grid; gap: .8rem; font-size: 1.1rem; font-weight: 700; }
 .contact-list li { display: flex; align-items: center; gap: .8rem; }
 .contact-list svg { color: var(--gold); width: 1.3em; height: 1.3em; }
 .contact-list a { text-decoration: none; }
